@@ -1,4 +1,4 @@
-<!--The content below is only a placeholder and can be replaced.-->
+<!--The content below is only a placeholder and can be replaced.
 
 <div style="text-align:center">
   <table align="center">
@@ -20,18 +20,22 @@
 
 
 <app-child [currentData]='messageEvent' (valueChange) = "deleteValue($event)"></app-child>
-
-<!--
-
-  <nav >
-    <a routerLink="/child1">child1</a>
-  </nav>
-
-  <router-outlet> </router-outlet>
+</div>
 -->
 
 
+<nav >
 
-</div>
+  <a routerLink="child">page2</a>
+  <br>
+  <a routerLink="child1">page1</a>
+  <br>
+  <a routerLink="sdf">unknownPage</a>
+
+</nav>
+
+<router-outlet> </router-outlet>
+
+
 
 
