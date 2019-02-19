@@ -1,34 +1,75 @@
 
- <form [formGroup]="StudentRegistrationForm" (ngSubmit)="displayName('/homePage')">
+ <form [formGroup]="StudentRegistrationForm" (ngSubmit)="displayName(StudentRegistrationForm.value)">
    <table>
      <tr>
-       <td>FullName</td>
-       <td>  <input id="fullName" formControlName="fullName" type="text" required></td>
+
+     <td>Name:</td>
+     <td>     <input class="form-control" formControlName="name" type="text"></td>
+
+   <div *ngIf="StudentRegistrationForm.controls['name'].invalid && (StudentRegistrationForm.controls['name'].dirty || StudentRegistrationForm.controls['name'].touched)" class="alert alert-danger">
+     <div *ngIf="StudentRegistrationForm.controls['name'].errors.required">
+       Name is required.
+     </div>
+   </div>
+   <br>
      </tr>
+
+
+
      <tr>
        <td>fathersName</td>
-       <td>  <input id="fathersName" formControlName="fathersName" type="text" ></td>
+       <td>  <input id="fathersName" formControlName="fathersName" type="text"></td>
+
+     <div *ngIf="StudentRegistrationForm.controls['fathersName'].invalid && (StudentRegistrationForm.controls['fathersName'].dirty || StudentRegistrationForm.controls['fathersName'].touched)" class="alert alert-danger">
+       <div *ngIf="StudentRegistrationForm.controls['fathersName'].errors.required">
+         fathersName is required.
+       </div>
+     </div>
      </tr>
+
+
      <tr>
        <td>portalAddress</td>
-       <td>  <input id="portalAddress" formControlName="portalAddress" type="text" ></td>
+       <td>  <input id="portalAddress" formControlName="portalAddress" type="text" >
+         <div *ngIf="StudentRegistrationForm.controls['portalAddress'].invalid && (StudentRegistrationForm.controls['portalAddress'].dirty || StudentRegistrationForm.controls['portalAddress'].touched)" class="alert alert-danger">
+           <div *ngIf="StudentRegistrationForm.controls['portalAddress'].errors.required">
+             portalAddress is required.
+           </div>
+         </div>
      </tr>
+
+
      <tr>
        <td>personalAddress</td>
        <td>  <input id="personalAddress" formControlName="personalAddress" type="text" ></td>
+       <div *ngIf="StudentRegistrationForm.controls['personalAddress'].invalid && (StudentRegistrationForm.controls['personalAddress'].dirty || StudentRegistrationForm.controls['personalAddress'].touched)" class="alert alert-danger">
+         <div *ngIf="StudentRegistrationForm.controls['personalAddress'].errors.required">
+           personalAddress is required.
+         </div>
+       </div>
      </tr>
+
      <tr>
        <td>Gender</td>
-       <td><input type="radio" value="male" formControlName="gender">male
+       <td><input  type="radio" value="male" formControlName="gender">male
          <input type="radio" value="Female" formControlName="gender">Female
        </td>
      </tr>
+
+
+
      <tr>
        <td>city</td>
        <td><select formControlName="city">
-         <option [value]="city" *ngFor="let city of cities">             {{city}}</option>
+         <option  [value]="city" *ngFor="let city of cities">             {{city}}</option>
        </select></td>
      </tr>
+
+
+
+
+
+
      <tr>
        <td>course</td>
        <td><select formControlName="course">
@@ -52,13 +93,24 @@
 
        </td>
      </tr>
+
      <tr>
        <td>PinCode</td>
        <td><input id="pinCode" formControlName="pinCode" type="text" ></td>
+       <div *ngIf="StudentRegistrationForm.controls['pinCode'].invalid && (StudentRegistrationForm.controls['pinCode'].dirty || StudentRegistrationForm.controls['pinCode'].touched)" class="alert alert-danger">
+         <div *ngIf="StudentRegistrationForm.controls['pinCode'].errors.required">
+           pincode is required.
+         </div>
+       </div>
      </tr>
      <tr>
        <td>EmailId</td>
        <td><input id="EmailId" formControlName="EmailId" type="text" ></td>
+       <div *ngIf="StudentRegistrationForm.controls['EmailId'].invalid && (StudentRegistrationForm.controls['EmailId'].dirty || StudentRegistrationForm.controls['EmailId'].touched)" class="alert alert-danger">
+         <div *ngIf="StudentRegistrationForm.controls['EmailId'].errors.required">
+           Email is required.
+         </div>
+       </div>
      </tr>
      <tr>
        <td>DOB</td>
@@ -67,20 +119,21 @@
      <tr>
        <td>MobileNo</td>
        <td><input id="MobileNo" formControlName="MobileNo" type="text" ></td>
+
+       <div *ngIf="StudentRegistrationForm.controls['MobileNo'].invalid && (StudentRegistrationForm.controls['MobileNo'].dirty || StudentRegistrationForm.controls['MobileNo'].touched)" class="alert alert-danger">
+         <div *ngIf="StudentRegistrationForm.controls['MobileNo'].errors.required">
+           mobile No is required.
+         </div>
+       </div>
      </tr>
 
+     <tr>
+       <td><button type="submit" [disabled]="!StudentRegistrationForm.valid" >submit</button></td>
+       <td><button type="reset">reset</button></td>
 
 
 
-
-  <tr>
-    <td><button type="submit"  >submit</button></td>
-    <td><button type="reset">reset</button></td>
-<!--
-[disabled]="!StudentRegistrationForm.valid"
--->
-  </tr>
+     </tr>
 
    </table>
 </form>
-
