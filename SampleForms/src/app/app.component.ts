@@ -23,6 +23,7 @@ export class AppComponent {
   constructor(private localStorage : LocalStorage) {
     this.localStorage.getItem('user1').subscribe((user) => {
       this.firstname=user.firstname;
+
       this.fathersName=user.fathersName;
       this.portalAddress=user.portalAddress;
       this.personalAddress=user.personalAddress;

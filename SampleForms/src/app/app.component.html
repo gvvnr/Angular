@@ -5,7 +5,7 @@
   <a routerLink="homePage">HomePage</a>
 </nav>
 
-<div *ngIf="firstname">
+<div *ngIf="fathersName">
   <table>
     <tr>
       <td>firstname</td>
@@ -22,25 +22,27 @@
       <td>district</td>
       <td>state</td>
       </tr>
-    <tr>{{firstname}}</tr>
-    <tr>{{fathersName}}</tr>
-    <tr>{{portalAddress}}</tr>
-    <tr>{{personalAddress}}</tr>
-    <tr>{{gender}}</tr>
-    <tr>{{pinCode}}</tr>
-    <tr>{{EmailId}}</tr>
-    <tr>{{DOB}}</tr>
-    <tr>{{MobileNo}}</tr>
-    <tr>{{city}}</tr>
-    <tr>{{course}}</tr>
-    <tr>{{district}}</tr>
-    <tr>{{state}}</tr>
-
+    <tr>
+      <td>{{firstname}}</td>
+      <td>{{fathersName}}</td>
+      <td>{{portalAddress}}</td>
+      <td>{{personalAddress}}</td>
+      <td>{{gender}}</td>
+      <td>{{pinCode}}</td>
+      <td>{{EmailId}}</td>
+      <td>{{DOB}}</td>
+      <td>{{MobileNo}}</td>
+      <td>{{city}}</td>
+      <td>{{course}}</td>
+      <td>{{district}}</td>
+      <td>{{state}}</td>
+    </tr>
   </table>
 
 </div>
-
-
-
-
 <router-outlet></router-outlet>
+
+
+
+
+
