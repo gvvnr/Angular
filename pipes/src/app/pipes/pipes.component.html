@@ -1,0 +1,18 @@
+<table>
+  <tr>
+    <td>id</td>
+    <td>name</td>
+    <td>Gender</td>
+    <td>date</td>
+    <td>salary</td>
+    <td>phone</td>
+  </tr>
+  <tr *ngFor="let student of studentData">
+    <td>{{student.id}}</td>
+    <td>{{student.name | studentData : student.gender}}</td>
+    <td>{{student.gender}}</td>
+    <td>{{student.date | date :'MMMM d, y'}} at {{student.date | date :'h:mm a'}}</td>
+    <td>{{student.salary | currency:'USD' : true}}</td>
+    <td>{{student.pho | phoneNumber }}</td>
+  </tr>
+</table>
