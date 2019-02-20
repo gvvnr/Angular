@@ -47,18 +47,12 @@ export class HomePageComponent implements OnInit {
   }
 
 
-  displayName(formData) {
+  displayName() {
 
-    //console.log(this.StudentRegistrationForm.value);
+    console.log(this.StudentRegistrationForm.value);
 
-    localStorage.setItem('user',this.StudentRegistrationForm.value).subscribe(() => {});
-   // localStorage.setItem("username", "John");
-    this.value = localStorage.getItem('user');
-    console.log(this.value);
-
-// Access some stored data
-    //alert("username = " + localStorage.getItem("user"));
-
+    this.localStorage.setItem('user1',this.StudentRegistrationForm.value).subscribe(() => {});
+     console.log(this.localStorage.getItem('user1'));
     this.router.navigate(['']);
   }
 }
