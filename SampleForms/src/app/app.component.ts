@@ -22,7 +22,7 @@ export class AppComponent {
   state;
   constructor(private localStorage : LocalStorage) {
     this.localStorage.getItem('user1').subscribe((user) => {
-      this.firstname=user.firstname;
+      this.firstname=user.name;
 
       this.fathersName=user.fathersName;
       this.portalAddress=user.portalAddress;
